@@ -115,7 +115,6 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     }
 
     @IBAction func save(_ sender: Any) {
-        fixHttpPrefix();
         if (!checkSettings()){
             return
         }
@@ -128,12 +127,6 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(false)
-    }
-    
-    func fixHttpPrefix() -> Void {
-        if (!(host.text?.hasPrefix("http://"))! && !(host.text?.hasPrefix("https://"))!){
-            host.text = "http://" + host.text!
-        }
     }
     
     func checkSettings() -> Bool {
