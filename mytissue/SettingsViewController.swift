@@ -16,9 +16,11 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var grantButton: UIButton!
-    @IBOutlet weak var advance: UITextField!
+    @IBOutlet weak var ahead: UITextField!
     @IBOutlet weak var requireNumber: UILabel!
+    @IBOutlet weak var invalidScheme: UILabel!
     @IBOutlet weak var foreground: UISwitch!
+    @IBOutlet weak var version: UILabel!
     @IBAction func grantNotification(_ sender: Any) {
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings { (UNNotificationSettings) in
@@ -68,7 +70,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
         UIApplication.shared.open(url!)
     }
     @IBAction func help(_ sender: Any) {
-        let url = URL(string: "https://ooi.enderqiu.cn")
+        let url = URL(string: "https://ooi.enderqiu.cn/#ooi-announcement")
         UIApplication.shared.open(url!)
     }
     
@@ -81,13 +83,22 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
         foreground.isOn = UserDefaults.standard.bool(forKey: "foreground")
         email.text = UserDefaults.standard.string(forKey: "email")
         password.text = UserDefaults.standard.string(forKey: "password")
-        advance.text = UserDefaults.standard.string(forKey: "advance")
+        ahead.text = UserDefaults.standard.string(forKey: "ahead")
         
+        // Get version and build number
+        let infoDictionary = Bundle.main.infoDictionary
+        if let infoDictionary = infoDictionary {
+            let appVersion = infoDictionary["CFBundleShortVersionString"]
+            let appBuild = infoDictionary["CFBundleVersion"]
+            version.text = "version \(appVersion ?? "nil") build \(appBuild ?? "nil")"
+        }
+        
+        // check notification authorization status
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings { (UNNotificationSettings) in
             if (UNNotificationSettings.authorizationStatus == UNAuthorizationStatus.authorized){
                 DispatchQueue.main.async(execute: {
-                    self.grantButton.setTitle("Granted", for: .normal)
+                    self.grantButton.setTitle("Already Granted", for: .normal)
                     self.grantButton.isEnabled = false
                 })
             }
@@ -100,7 +111,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
         UserDefaults.standard.set(foreground.isOn, forKey: "foreground")
         UserDefaults.standard.set(email.text, forKey: "email")
         UserDefaults.standard.set(password.text, forKey: "password")
-        UserDefaults.standard.set(advance.text, forKey: "advance")
+        UserDefaults.standard.set(ahead.text, forKey: "ahead")
     }
 
     @IBAction func save(_ sender: Any) {
@@ -144,6 +155,10 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
             password.attributedPlaceholder = attrStr
             return false
         }
+        else if (!(host.text?.hasPrefix("https://"))! && !(host.text?.hasPrefix("http://"))!){
+            invalidScheme.isHidden = false
+            return false
+        }
         else if (!(host.text?.hasPrefix("https://"))!){
             let alertController = UIAlertController(title: "HTTP Not Suggested", message: "Host should start with HTTPS to protect your information on the internet.", preferredStyle: UIAlertController.Style.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel) {
@@ -165,7 +180,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
             })
             return false
         }
-        else if (!isPurnInt(string: advance.text!)){
+        else if (!isPurnInt(string: ahead.text!)){
             requireNumber.isHidden = false
             return false
         }

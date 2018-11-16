@@ -45,7 +45,7 @@
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AH-E8-ar6">
-                                        <rect key="frame" x="465" y="69" width="67" height="30"/>
+                                        <rect key="frame" x="465" y="69" width="153" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Grant"/>
                                         <connections>
@@ -97,7 +97,7 @@
                                             <action selector="update:" destination="UoU-Wl-8vQ" eventType="touchUpInside" id="wc6-fH-8uc"/>
                                         </connections>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55M-Jd-Drc">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="55M-Jd-Drc">
                                         <rect key="frame" x="465" y="184" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
@@ -135,8 +135,8 @@ even App is in foreground</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Advance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHU-e1-aBB">
-                                        <rect key="frame" x="359" y="20" width="67" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ahead" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHU-e1-aBB">
+                                        <rect key="frame" x="359" y="20" width="50" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -187,10 +187,17 @@ in advance</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="version 0.1 build 12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH0-pu-Ar3">
-                                        <rect key="frame" x="106" y="218" width="92" height="12"/>
+                                        <rect key="frame" x="106" y="218" width="148" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Must start with http:// or https://" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxH-xw-g5z">
+                                        <rect key="frame" x="106" y="54" width="157" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -211,14 +218,16 @@ in advance</string>
                         <viewLayoutGuide key="safeArea" id="SIV-Ts-WA0"/>
                     </view>
                     <connections>
-                        <outlet property="advance" destination="QWE-N5-ECE" id="ns3-TJ-maU"/>
+                        <outlet property="ahead" destination="QWE-N5-ECE" id="0zy-zb-zv7"/>
                         <outlet property="email" destination="ipx-fX-tmr" id="Amv-1Z-BeQ"/>
                         <outlet property="foreground" destination="Wed-MS-NL7" id="hKG-wu-E0d"/>
                         <outlet property="grantButton" destination="1AH-E8-ar6" id="Ohg-2u-JvW"/>
                         <outlet property="host" destination="Ezx-ta-dqT" id="vJh-TK-fiU"/>
+                        <outlet property="invalidScheme" destination="pxH-xw-g5z" id="Wek-KG-uke"/>
                         <outlet property="password" destination="fZH-vk-FUH" id="3lL-i6-hSI"/>
                         <outlet property="requireNumber" destination="H18-MA-dbS" id="E46-il-6f1"/>
                         <outlet property="testMode" destination="55M-Jd-Drc" id="8fZ-d2-Pm3"/>
+                        <outlet property="version" destination="mH0-pu-Ar3" id="pWb-GI-jpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ck-Gz-5VF" userLabel="First Responder" sceneMemberID="firstResponder"/>

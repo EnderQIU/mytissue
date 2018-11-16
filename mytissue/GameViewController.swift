@@ -15,7 +15,7 @@ class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
 
     @IBOutlet weak var tissueWebKitView: WKWebView!
     
-    var advance: Double = TimeInterval(UserDefaults.standard.string(forKey: "advance")!)!
+    var ahead: Double = TimeInterval(UserDefaults.standard.string(forKey: "ahead")!)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
                         print("Invalid interval.")
                         break
                     }
-                    var _interval = interval - advance
+                    var _interval = interval - ahead
                     if (_interval <= 0){
                         _interval = interval
                     }
