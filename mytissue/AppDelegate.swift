@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let dic = ["testMode": true,
+        let dic = ["testMode": false,
                    "host": "https://",
-                   "advance": "60",
-                   "foreground": false,
+                   "ahead": "60",
+                   "foreground": true,
                    ]
             as [String : Any]
         UserDefaults.standard.register(defaults: dic)
