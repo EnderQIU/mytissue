@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var ahead: UITextField!
     @IBOutlet weak var requireNumber: UILabel!
     @IBOutlet weak var invalidScheme: UILabel!
-    @IBOutlet weak var foreground: UISwitch!
+    @IBOutlet weak var ooyodo: UISwitch!
     @IBOutlet weak var version: UILabel!
     @IBAction func grantNotification(_ sender: Any) {
         let center = UNUserNotificationCenter.current()
@@ -80,7 +80,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view.
         host.text = UserDefaults.standard.string(forKey: "host")
         testMode.isOn = UserDefaults.standard.bool(forKey: "testMode")
-        foreground.isOn = UserDefaults.standard.bool(forKey: "foreground")
+        ooyodo.isOn = UserDefaults.standard.bool(forKey: "ooyodo")
         email.text = UserDefaults.standard.string(forKey: "email")
         password.text = UserDefaults.standard.string(forKey: "password")
         ahead.text = UserDefaults.standard.string(forKey: "ahead")
@@ -108,7 +108,7 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     func saveSettings() -> Void {
         UserDefaults.standard.set(host.text, forKey: "host")
         UserDefaults.standard.set(testMode.isOn, forKey: "testMode")
-        UserDefaults.standard.set(foreground.isOn, forKey: "foreground")
+        UserDefaults.standard.set(ooyodo.isOn, forKey: "ooyodo")
         UserDefaults.standard.set(email.text, forKey: "email")
         UserDefaults.standard.set(password.text, forKey: "password")
         UserDefaults.standard.set(ahead.text, forKey: "ahead")

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38188C76219F0D87007C83D8 /* UserNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38188C75219F0D87007C83D8 /* UserNotificationController.swift */; };
+		38188C82219F1CBA007C83D8 /* ooyodo_docking_complete.caf in Resources */ = {isa = PBXBuildFile; fileRef = 38188C7F219F1CBA007C83D8 /* ooyodo_docking_complete.caf */; };
+		38188C83219F1CBA007C83D8 /* ooyodo_ship_complete.caf in Resources */ = {isa = PBXBuildFile; fileRef = 38188C80219F1CBA007C83D8 /* ooyodo_ship_complete.caf */; };
+		38188C84219F1CBA007C83D8 /* ooyodo_expedition_complete.caf in Resources */ = {isa = PBXBuildFile; fileRef = 38188C81219F1CBA007C83D8 /* ooyodo_expedition_complete.caf */; };
 		388EA7542193E6FB004FFEC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EA7532193E6FB004FFEC2 /* AppDelegate.swift */; };
 		388EA7562193E6FB004FFEC2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EA7552193E6FB004FFEC2 /* GameViewController.swift */; };
 		388EA7592193E6FB004FFEC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388EA7572193E6FB004FFEC2 /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38188C75219F0D87007C83D8 /* UserNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationController.swift; sourceTree = "<group>"; };
+		38188C7F219F1CBA007C83D8 /* ooyodo_docking_complete.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ooyodo_docking_complete.caf; sourceTree = "<group>"; };
+		38188C80219F1CBA007C83D8 /* ooyodo_ship_complete.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ooyodo_ship_complete.caf; sourceTree = "<group>"; };
+		38188C81219F1CBA007C83D8 /* ooyodo_expedition_complete.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ooyodo_expedition_complete.caf; sourceTree = "<group>"; };
 		388EA7502193E6FB004FFEC2 /* mytissue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mytissue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388EA7532193E6FB004FFEC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388EA7552193E6FB004FFEC2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +46,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38188C77219F1227007C83D8 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				38188C7F219F1CBA007C83D8 /* ooyodo_docking_complete.caf */,
+				38188C81219F1CBA007C83D8 /* ooyodo_expedition_complete.caf */,
+				38188C80219F1CBA007C83D8 /* ooyodo_ship_complete.caf */,
+			);
+			path = sound;
+			sourceTree = "<group>";
+		};
 		388EA7472193E6FB004FFEC2 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +76,7 @@
 		388EA7522193E6FB004FFEC2 /* mytissue */ = {
 			isa = PBXGroup;
 			children = (
+				38188C77219F1227007C83D8 /* sound */,
 				3896CEDC219C1044008FB350 /* mytissue.entitlements */,
 				388EA7532193E6FB004FFEC2 /* AppDelegate.swift */,
 				38F218BF21944FA000CDBAB5 /* SettingsViewController.swift */,
@@ -66,6 +85,7 @@
 				388EA75A2193E6FD004FFEC2 /* Assets.xcassets */,
 				388EA75C2193E6FD004FFEC2 /* LaunchScreen.storyboard */,
 				388EA75F2193E6FD004FFEC2 /* Info.plist */,
+				38188C75219F0D87007C83D8 /* UserNotificationController.swift */,
 			);
 			path = mytissue;
 			sourceTree = "<group>";
@@ -140,9 +160,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38188C84219F1CBA007C83D8 /* ooyodo_expedition_complete.caf in Resources */,
 				388EA75E2193E6FD004FFEC2 /* LaunchScreen.storyboard in Resources */,
 				388EA75B2193E6FD004FFEC2 /* Assets.xcassets in Resources */,
 				388EA7592193E6FB004FFEC2 /* Main.storyboard in Resources */,
+				38188C83219F1CBA007C83D8 /* ooyodo_ship_complete.caf in Resources */,
+				38188C82219F1CBA007C83D8 /* ooyodo_docking_complete.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +178,7 @@
 			files = (
 				388EA7562193E6FB004FFEC2 /* GameViewController.swift in Sources */,
 				388EA7542193E6FB004FFEC2 /* AppDelegate.swift in Sources */,
+				38188C76219F0D87007C83D8 /* UserNotificationController.swift in Sources */,
 				38F218C021944FA000CDBAB5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

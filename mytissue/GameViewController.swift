@@ -15,6 +15,8 @@ class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
 
     @IBOutlet weak var tissueWebKitView: WKWebView!
     
+    let ooyodo = UserDefaults.standard.bool(forKey: "ooyodo")
+    
     var ahead: Double = TimeInterval(UserDefaults.standard.string(forKey: "ahead")!)!
     
     override func viewDidLoad() {
@@ -50,6 +52,7 @@ class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
                     let identifier: String = (dic["identifier"] as AnyObject).description
                     let title: String = (dic["title"] as AnyObject).description
                     let body: String = (dic["body"] as AnyObject).description
+                    let soundName: String = (dic["soundName"] as AnyObject).description
                     
                     let interval: Double = TimeInterval((dic["interval"] as AnyObject).description)!
                     // Handle negative value
@@ -65,13 +68,12 @@ class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
                     let content = UNMutableNotificationContent()
                     content.title = title
                     content.body = body
-                    content.sound = UNNotificationSound.default
-                    let foreground = UserDefaults.standard.bool(forKey: "foreground")
-                    if (foreground){
-                        content.setValue("YES", forKey: "shouldAlwaysAlertWhileAppIsForeground")
+                    if (!ooyodo || soundName == "default" || soundName.isEmpty){
+                        content.sound = UNNotificationSound.default
                     }else{
-                        content.setValue("NO", forKey: "shouldAlwaysAlertWhileAppIsForeground")
+                        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: soundName))  // will be default sound if not exist
                     }
+
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: _interval, repeats: false)
                     let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
                     // Schedule the notification.
