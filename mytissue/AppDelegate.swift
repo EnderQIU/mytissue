@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,10 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dic = ["testMode": false,
                    "host": "https://",
                    "ahead": "60",
-                   "foreground": true,
+                   "ooyodo": false,
                    ]
             as [String : Any]
         UserDefaults.standard.register(defaults: dic)
+        UNUserNotificationCenter.current().delegate = UserNotificationController.shared
         return true
     }
 

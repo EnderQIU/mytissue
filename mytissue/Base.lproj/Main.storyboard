@@ -116,20 +116,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PU-Pf-QvH">
-                                        <rect key="frame" x="359" y="152" width="124" height="24"/>
+                                        <rect key="frame" x="359" y="152" width="177" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Show notifications
-even App is in foreground</string>
+                                        <string key="text">Play notification sound
+by Ooyodo instead of system default</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wed-MS-NL7">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wed-MS-NL7">
                                         <rect key="frame" x="466" y="123" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Foreground" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-Bn-TiO">
-                                        <rect key="frame" x="359" y="128" width="89" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ooyodo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-Bn-TiO">
+                                        <rect key="frame" x="359" y="128" width="60" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -220,10 +220,10 @@ in advance</string>
                     <connections>
                         <outlet property="ahead" destination="QWE-N5-ECE" id="0zy-zb-zv7"/>
                         <outlet property="email" destination="ipx-fX-tmr" id="Amv-1Z-BeQ"/>
-                        <outlet property="foreground" destination="Wed-MS-NL7" id="hKG-wu-E0d"/>
                         <outlet property="grantButton" destination="1AH-E8-ar6" id="Ohg-2u-JvW"/>
                         <outlet property="host" destination="Ezx-ta-dqT" id="vJh-TK-fiU"/>
                         <outlet property="invalidScheme" destination="pxH-xw-g5z" id="Wek-KG-uke"/>
+                        <outlet property="ooyodo" destination="Wed-MS-NL7" id="LXh-pB-93d"/>
                         <outlet property="password" destination="fZH-vk-FUH" id="3lL-i6-hSI"/>
                         <outlet property="requireNumber" destination="H18-MA-dbS" id="E46-il-6f1"/>
                         <outlet property="testMode" destination="55M-Jd-Drc" id="8fZ-d2-Pm3"/>
