@@ -1,5 +1,5 @@
 # My Tissue
-An iOS client for ooi3-remastered.
+~~An iOS client for ooi3-remastered.~~ This project is no longer maintained.
 
 ## Features
 1. You can receive notifications when:
