@@ -21,6 +21,7 @@ class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.becomeFirstResponder()
         // Do any additional setup after loading the view, typically from a nib.
         let host = UserDefaults.standard.string(forKey: "host")!;
         let testMode = UserDefaults.standard.bool(forKey: "testMode");
@@ -83,6 +84,31 @@ class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessag
             default:
                 print("JS called an unregistered handler.")
                 break
+        }
+    }
+    
+    // We are willing to become first responder to get shake motion
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            let alert = UIAlertController(title: "Choose an action:", message: "", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Clear Caches", comment: "Default action"), style: .default, handler: { _ in
+                URLCache.shared.removeAllCachedResponses()
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Reload", comment: "Default action"), style: .default, handler: { _ in
+                self.tissueWebKitView.reload()
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Logout", comment: "Default action"), style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancle", comment: "Primary action"), style: .cancel, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

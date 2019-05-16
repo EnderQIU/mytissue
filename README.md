@@ -7,6 +7,11 @@ An iOS client for ooi3-remastered.
 - Expedition fleets came back
 - Docking finished
 
+2. By performing a shake gesture on game screen, you can decided to:
+- Reload game page.
+- Invalidate caches.
+- Logout game.
+
 ## Requirements
 - [ooi3-remastered](https://github.com/EnderQIU/ooi3-remastered) as the backend.
 - iPhone or iPad with iOS 11.0 or above.

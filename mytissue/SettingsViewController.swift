@@ -66,12 +66,28 @@ class SettingsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func update(_ sender: Any) {
-        let url = URL(string: "https://github.com/EnderQIU/mytissue/releases")
-        UIApplication.shared.open(url!)
+        let alert = UIAlertController(title: "User Manual", message: "This is an open source Kancolle client for iOS.\nYou need to connect to a special server to login game on mobile and receive notifications.\nAfter login, you can shake device to invalidate caches, reload game or logout.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Project Site", comment: "Default action"), style: .default, handler: { _ in
+            let url = URL(string: "https://github.com/EnderQIU/mytissue")
+            UIApplication.shared.open(url!)
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Get Update", comment: "Default action"), style: .default, handler: { _ in
+            let url = URL(string: "https://github.com/EnderQIU/mytissue/releases")
+            UIApplication.shared.open(url!)
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Primary action"), style: .cancel, handler: { _ in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
-    @IBAction func help(_ sender: Any) {
-        let url = URL(string: "https://ooi.enderqiu.cn/#ooi-announcement")
-        UIApplication.shared.open(url!)
+    
+    @IBAction func clearCache(_ sender: Any) {
+        let alert = UIAlertController(title: "Clear Caches?", message: "Select OK to invalidate caches.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            URLCache.shared.removeAllCachedResponses()
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancle", comment: "Primary action"), style: .cancel, handler: { _ in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
